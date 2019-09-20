@@ -1,22 +1,9 @@
-const express = require("express");
+var express = require("express");
+var router = express.Router();
 
-const route = express.Router();
-//const filmData = require("../data/film");
+/* GET home page. */
+router.get("/", function(req, res, next) {
+  res.send({ title: "Express" });
+});
 
-const filmController=require("../controller/index")
-// ~get all film~
-route.get("/",filmController.getAll);
-
-// ~get film by id~
-route.get("/:id",filmController.getById);
-
-// ~add new film~
-route.post("/",filmController.addFilm);
-
-// ~delete film by its id~
-route.delete("/:id",filmController.deleteFilm) ;
-
-// ~update a film by its id~
-route.put("/:id",filmController.updateFilm);
-
-module.exports = route;
+module.exports = router;
