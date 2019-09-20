@@ -1,4 +1,4 @@
-const film = require("../data/film");
+const filmData = require("../data/film");
 
 module.exports = {
   getAll: (req, res) => {
@@ -32,6 +32,8 @@ module.exports = {
         filmData
       });
     } catch (error) {
+      console.log(error);
+      
       res.send({
         message: `error add film`,
         error
