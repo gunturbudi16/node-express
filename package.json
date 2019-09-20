@@ -7,10 +7,11 @@
   "author": "guntur",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "PORT=1766 NODE_ENV=development node server.js"
   }
 }
