@@ -2,7 +2,7 @@
   "name": "node-express-postman",
   "version": "1.0.0",
   "description": "node-express",
-  "main": "index.js",
+  "main": "server.js",
   "license": "MIT",
   "author": "guntur",
   "dependencies": {
