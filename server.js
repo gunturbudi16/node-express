@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 
 // app.get("/env", (req, res) => res.send(JSON.stringify(process.env.SECRET)));
 // app.use("/", (req, res) => res.send("Hello Express!"));
-app.get("/", function(req, res) {
-  res.redirect("/todo");
+app.get("/", (req, res) => {
+  res.redirect("/film");
 });
 app.use("/film", indexRouter);
 
