@@ -1,12 +1,12 @@
-const filmData = require("../data/film");
+const film = require("../data/film");
 
 module.exports = {
   getAll: (req, res) => {
-    res.send(filmData);
+    res.send(film);
   },
   getById: (req, res) => {
     try {
-      const filterFilm = filmData.find(item => item.id == req.params.id);
+      const filterFilm = film.find(item => item.id == req.params.id);
       res.send({
         message: "Here is what you looking for",
         filterFilm
@@ -20,16 +20,16 @@ module.exports = {
   },
   addFilm: (req, res) => {
     try {
-      let newId = filmData.length + 1;
+      let newId = film.length + 1;
       let newfilm = {
         id: newId,
         judul: req.body.judul,
         genre: req.body.genre
       };
-      filmData.push(newfilm);
+      film.push(newfilm);
       res.status(200).send({
         message: "film successfully added",
-        filmData
+        film
       });
     } catch (error) {
       console.log(error);
@@ -43,7 +43,7 @@ module.exports = {
   deleteFilm:(req,res)=> {
     try {
       const idToDelete = req.params.id;
-      let newfilm = filmData.filter(item => item.id !== parseInt(idToDelete));
+      let newfilm = film.filter(item => item.id !== parseInt(idToDelete));
   
       res.status(200).send(newfilm);
     } catch (error) {
@@ -57,16 +57,16 @@ module.exports = {
   },
   updateFilm:(req,res) => {
     try {
-      let getfilmToUpdate = filmData.findIndex(data => data.id == req.params.id);
+      let getfilmToUpdate = film.findIndex(data => data.id == req.params.id);
   
-      filmData.map(data => {
+      film.map(data => {
         if (data.id == req.params.id) {
-          filmData[getfilmToUpdate].film = req.body.film;
+          film[getfilmToUpdate].film = req.body.film;
         }
       });
       res.send({
         message: "data successfully updated",
-        filmData
+        film
       });
     } catch (error) {
       res.send({
