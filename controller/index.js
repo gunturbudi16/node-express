@@ -2,7 +2,7 @@ const filmData = require("../data/film");
 
 module.exports = {
   getAll: (req, res) => {
-    res.send(film);
+    res.send(filmData);
   },
   getById: (req, res) => {
     try {
